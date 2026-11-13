@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Matéo et les Nombres</title>
+<meta name="description" content="Jeu de plateforme 2D où il faut résoudre des calculs pour avancer.">
+<meta name="theme-color" content="#2f6fde">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="game"></canvas>
+
+  <!-- Menu principal -->
+  <div id="menu" class="overlay">
+    <div class="panel">
+      <h1>Matéo <span>et les Nombres</span></h1>
+      <p class="tag">Saute, cours et calcule : chaque bonne réponse ouvre le chemin !</p>
+      <div class="label">Difficulté</div>
+      <div class="row" id="diffBtns">
+        <button data-d="1">Facile<small>CP – CE2</small></button>
+        <button data-d="2">Moyen<small>CM1 – CM2</small></button>
+        <button data-d="3">Difficile<small>Collège</small></button>
+      </div>
+      <div class="label">Monde</div>
+      <div class="grid" id="levelBtns"></div>
+      <button id="playBtn" class="big">Jouer ▶</button>
+      <div class="help">
+        <b>← →</b> ou <b>Q D</b> : bouger &nbsp;·&nbsp; <b>Espace / ↑ / Z</b> : sauter &nbsp;·&nbsp; <b>Maj</b> : courir<br>
+        <b>1 2 3 4</b> : répondre &nbsp;·&nbsp; <b>Échap</b> : pause<br>
+        Tape les <b>blocs à symbole</b> par dessous pour obtenir une question. Les <b>portes violettes</b> s'ouvrent avec la bonne réponse.
+      </div>
+      <div class="best">Meilleur score : <b id="bestScore">0</b></div>
+    </div>
+  </div>
+
+  <!-- Question -->
+  <div id="question" class="overlay hidden">
+    <div class="panel q">
+      <div class="qtitle" id="qTitle">Bloc mystère !</div>
+      <div class="qtext" id="qText">7 + 5 = ?</div>
+      <div class="choices" id="qChoices"></div>
+      <div class="qfeed" id="qFeed"></div>
+    </div>
+  </div>
+
+  <!-- Messages (pause, fin de niveau, game over) -->
+  <div id="message" class="overlay hidden">
+    <div class="panel">
+      <h2 id="mTitle"></h2>
+      <div id="mBody"></div>
+      <div class="row" id="mBtns"></div>
+    </div>
+  </div>
+
+  <!-- Contrôles tactiles -->
+  <div id="touch" class="hidden">
+    <div class="tleft">
+      <button data-k="left" aria-label="Gauche">◀</button>
+      <button data-k="right" aria-label="Droite">▶</button>
+    </div>
+    <div class="tright">
+      <button data-k="run" class="small" aria-label="Courir">»</button>
+      <button data-k="jump" aria-label="Sauter">⤒</button>
+    </div>
+    <button id="pauseBtn" aria-label="Pause">❚❚</button>
+  </div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>

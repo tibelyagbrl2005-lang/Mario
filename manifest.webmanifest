@@ -1,0 +1,15 @@
+{
+  "name": "Matéo et les Nombres",
+  "short_name": "Matéo Maths",
+  "description": "Jeu de plateforme 2D où les calculs ouvrent le chemin.",
+  "lang": "fr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#111827",
+  "theme_color": "#2f6fde",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
